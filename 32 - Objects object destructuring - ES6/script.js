@@ -34,3 +34,55 @@ for (let key in options) {
 console.log(options["colors"]["border"]);
 
 console.log(counter);
+
+// 2
+const obs = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    bg: "red",
+  },
+};
+
+// получение массива со всеми ключами
+console.log(Object.keys(obs));
+
+console.log(Object.keys(obs).length);
+
+// 3
+const optimus = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    bg: "red",
+  },
+  makeTest: function () {
+    console.log("Test");
+  },
+};
+
+// запуск функции
+optimus.makeTest();
+
+// 4
+// деструктуризация объекта
+const leon = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    bg: "red",
+  },
+  makeTest: function () {
+    console.log("Test");
+  },
+};
+
+// деструктуризация
+const { border, bg } = leon.colors;
+console.log(border);
