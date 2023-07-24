@@ -3,13 +3,8 @@
 let numberOfYears;
 
 const start = () => {
-  numberOfYears = prompt("How do you do?");
-
-  while (
-    personalGamingDB == "" ||
-    personalGamingDB == null ||
-    isNaN(personalGamingDB)
-  ) {
+  numberOfYears = prompt("How do you do?", "");
+  while (numberOfYears == "" || numberOfYears == null || isNaN(numberOfYears)) {
     numberOfYears = prompt("How do you do?");
   }
 };
@@ -24,18 +19,22 @@ const personalGamingDB = {
   privat: false,
 };
 
-/*for (let b = 0; b < 3; b++) {
+for (let b = 0; b < 3; b++) {
   let writeYouGenres = prompt(
     `Your favorite games genre under number ${b + 1}`
   );
   personalGamingDB.genres.push(writeYouGenres);
-} */
-
-const hidden = true;
-
-if (hidden) {
-  personalGamingDB.privat = true;
 }
+
+const showMyDB = (hidden) => {
+  if (!hidden) {
+    console.log(personalGamingDB);
+  }
+};
+
+showMyDB(personalGamingDB.privat);
+
+
 
 console.log(personalGamingDB);
 
